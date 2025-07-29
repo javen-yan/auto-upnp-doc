@@ -49,7 +49,7 @@ yarn preview
 
 - 推送到 `main` 或 `master` 分支时会自动触发构建
 - 构建完成后会自动部署到 GitHub Pages
-- 网站地址：https://[你的用户名].github.io/auto-upnp-web
+- 网站地址：https://javen-yan.github.io/auto-upnp-doc
 
 ## 📁 项目结构
 

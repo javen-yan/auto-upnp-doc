@@ -1,18 +1,19 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/auto-upnp-doc/',
   title: 'Auto-UPnP',
   description: '自动暴露端口到路由器，NAS 快捷端口暴露，路由器设备, Openwrt/Linux/飞牛Nas',
   lang: 'zh-CN',
   
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'theme-color', content: '#646cff' }],
+    ['link', { rel: 'icon', href: '/auto-upnp-doc/favicon.ico' }],
+    ['meta', { name: 'theme-color', content: '#0066cc' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }]
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/auto-upnp-doc/logo.svg',
     siteTitle: 'Auto-UPnP',
     
     nav: [
