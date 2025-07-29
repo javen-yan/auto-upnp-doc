@@ -116,7 +116,7 @@ Auto-UPnP 特别适用于以下场景：
 
 ## 快速开始
 
-想要立即体验 Auto-UPnP？请查看 [安装教程](/install/) 开始使用。
+想要立即体验 Auto-UPnP？请查看 [安装教程](/guide/install) 开始使用。
 
 ## 技术优势
 
