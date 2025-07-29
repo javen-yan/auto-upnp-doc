@@ -1,0 +1,15 @@
+{
+  "name": "auto-upnp-web",
+  "version": "1.0.0",
+  "description": "Auto-UPnP 项目文档网站",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.0"
+  }
+} 
