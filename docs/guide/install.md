@@ -263,7 +263,7 @@ sudo systemctl status auto-upnp
 
 ## 服务管理
 
-查看 [基本使用](/usage) 了解更多使用知识
+查看 [基本使用](/usage/) 了解更多使用知识
 
 ## 故障排除
 
