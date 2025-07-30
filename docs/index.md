@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: /install/
+      link: /guide/install
     - theme: alt
       text: 查看指引
       link: /guide/
