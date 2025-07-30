@@ -241,9 +241,6 @@ sudo auto-upnp -config /etc/auto-upnp/config.yaml -log-level debug
 # 检查进程
 ps aux | grep auto-upnp
 
-# 检查端口
-netstat -tlnp | grep 8080
-
 # 检查日志
 tail -f /var/log/auto-upnp.log
 
@@ -252,134 +249,21 @@ sudo systemctl status auto-upnp
 ```
 
 ### 访问 Web 界面
-打开浏览器访问：`http://your-server-ip:8080`
+
+管理地址的端口会使用 port_range 第一个端口， 如果第一个不能用会依次使用后面的端口
+假设设置的 port_range 为 18000-19000 那么管理端端口为 18000
+
+打开浏览器访问：`http://your-server-ip:${port_range[0]}`
 
 如果一切正常，您应该能看到 Auto-UPnP 的管理界面。
 
-### 测试 API 接口
-```bash
-# 获取服务状态
-curl -u admin:admin http://localhost:8080/api/status
-
-# 获取端口映射列表
-curl -u admin:admin http://localhost:8080/api/mappings
-
-# 获取端口状态
-curl -u admin:admin http://localhost:8080/api/ports
-```
-
 ## 配置说明
 
-### 基本配置项
-
-#### 端口范围配置
-```yaml
-port_range:
-  start: 18000      # 起始端口
-  end: 19000        # 结束端口
-  step: 1           # 端口间隔
-```
-
-#### UPnP 配置
-```yaml
-upnp:
-  discovery_timeout: 10s    # 设备发现超时时间
-  mapping_duration: 1h      # 端口映射持续时间，0表示永久
-  retry_attempts: 3         # 重试次数
-  retry_delay: 5s           # 重试延迟
-```
-
-#### 管理服务配置
-```yaml
-admin:
-  enabled: true             # 是否启用管理服务
-  host: "0.0.0.0"          # 监听地址
-  username: "admin"         # 用户名
-  password: "admin"         # 密码
-  data_dir: "/var/lib/auto-upnp"  # 数据目录
-```
-
-#### 日志配置
-```yaml
-log:
-  level: "info"             # 日志级别: debug, info, warn, error
-  format: "json"            # 日志格式: json, text
-  file: "/var/log/auto-upnp.log"  # 日志文件
-  max_size: 10485760        # 最大文件大小 (10MB)
-  backup_count: 5           # 备份文件数量
-```
-
-#### 监控配置
-```yaml
-monitor:
-  check_interval: 30s       # 端口状态检查间隔
-  cleanup_interval: 5m      # 清理无效映射间隔
-  max_mappings: 100         # 最大端口映射数量
-```
-
-### 高级配置
-
-#### 网络接口配置
-```yaml
-network:
-  preferred_interfaces: ["eth0", "wlan0"]  # 优先使用的网络接口
-  exclude_interfaces: ["lo", "docker"]     # 排除的网络接口
-```
-
-#### 安全配置
-```yaml
-admin:
-  enable_auth: true         # 启用认证
-  allowed_ips: ["192.168.1.0/24"]  # 允许访问的IP范围
-  ssl_cert: "/path/to/cert.pem"    # SSL证书路径
-  ssl_key: "/path/to/key.pem"      # SSL私钥路径
-```
-
-详细的配置说明请参考 [配置说明](/usage/configuration) 页面。
+查看 [配置说明](/usage/configuration) 了解详细配置选项
 
 ## 服务管理
 
-### 基本命令
-```bash
-# 启动服务
-sudo systemctl start auto-upnp
-
-# 停止服务
-sudo systemctl stop auto-upnp
-
-# 重启服务
-sudo systemctl restart auto-upnp
-
-# 查看服务状态
-sudo systemctl status auto-upnp
-
-# 查看实时日志
-sudo journalctl -u auto-upnp -f
-
-# 查看文件日志
-tail -f /var/log/auto-upnp.log
-
-# 开机自启动
-sudo systemctl enable auto-upnp
-
-# 禁用开机自启动
-sudo systemctl disable auto-upnp
-```
-
-### 调试命令
-```bash
-# 测试配置
-auto-upnp -config /etc/auto-upnp/config.yaml -test
-
-# 调试模式运行
-auto-upnp -config /etc/auto-upnp/config.yaml -log-level debug
-
-# 显示帮助信息
-auto-upnp -help
-
-# 显示版本信息
-auto-upnp -version
-```
+查看 [基本使用](/usage) 了解更多使用知识
 
 ## 故障排除
 

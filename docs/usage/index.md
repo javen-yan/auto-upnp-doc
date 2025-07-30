@@ -38,7 +38,10 @@ sudo journalctl -u auto-upnp -f
 
 ## 访问 Web 管理界面
 
-启动服务后，打开浏览器访问：`http://your-server-ip:8080`
+管理地址的端口会使用 port_range 第一个端口， 如果第一个不能用会依次使用后面的端口
+假设设置的 port_range 为 18000-19000 那么管理端端口为 18000
+
+启动服务后，打开浏览器访问：`http://your-server-ip:${port_range[0]}`
 
 ### 界面概览
 
