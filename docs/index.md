@@ -5,7 +5,7 @@ hero:
   text: 智能端口映射解决方案
   tagline: 自动暴露端口到路由器，NAS 快捷端口暴露，路由器设备, Openwrt/Linux/飞牛Nas
   image:
-    src: static/router.png
+    src: /router.png
     alt: Auto-UPnP
   actions:
     - theme: brand
