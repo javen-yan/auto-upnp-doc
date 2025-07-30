@@ -6,7 +6,7 @@
     <a href="https://github.com/javen-yan/auto-upnp/releases" target="_blank" rel="noopener noreferrer">
       <img src="https://img.shields.io/github/release/javen-yan/auto-upnp?style=flat-square&label=Release" alt="GitHub Release">
     </a>
-    <a href="https://github.com/javen-yan/auto-upnp/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/javen-yan/auto-upnp/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">
       <img src="https://img.shields.io/github/license/javen-yan/auto-upnp?style=flat-square" alt="License">
     </a>
     <a href="https://github.com/javen-yan/auto-upnp" target="_blank" rel="noopener noreferrer">
