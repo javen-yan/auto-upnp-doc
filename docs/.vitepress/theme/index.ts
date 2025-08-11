@@ -13,8 +13,8 @@ export default {
   },
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
-      'home-hero-after': () => h(GitHubBadges),
-      'home-features-after': () => h(AdWidget)  
+      'home-hero-before': () => h(AdWidget),
+      'home-hero-after': () => h(GitHubBadges)  
     })
   }
 } 
